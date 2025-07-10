@@ -15,8 +15,8 @@ resource "azurerm_federated_identity_credential" "this" {
 }
 
 resource "azurerm_role_assignment" "this" {
-  for_each             = toset(var.role_definition_ids)
-  scope                = var.role_assignment_scope
-  role_definition_id   = each.value
-  principal_id         = azurerm_user_assigned_identity.this.principal_id
+  for_each           = toset(var.role_definition_ids)
+  scope              = var.role_assignment_scope
+  role_definition_id = each.value
+  principal_id       = azurerm_user_assigned_identity.this.principal_id
 }

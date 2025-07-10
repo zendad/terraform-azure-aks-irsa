@@ -1,4 +1,4 @@
-ivariable "identity_name" {
+variable "identity_name" {
   type        = string
   description = "Name of the user assigned identity"
 }
